@@ -46,7 +46,7 @@ class Login extends React.Component {
                 <span className="logo_img"></span>
                 <span className="login_text">FAZER LOGIN COM SIGAA</span>
               </div>
-              
+
             </div>
           </header>
           <div>

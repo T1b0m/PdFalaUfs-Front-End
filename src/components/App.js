@@ -88,7 +88,6 @@ class App extends React.Component {
 
           <button onClick={this.prepareComentario}className="escrever_comentario" type="button">Escrever um comentário</button>
           
-
         </body>
       </div>
     );
