@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/AppStyle.css';
 import { withRouter } from 'react-router-dom'
+//teste
 
 class App extends React.Component {
 
