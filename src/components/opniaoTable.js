@@ -15,11 +15,12 @@ export default props => {
     })
 
     return (
-        <table className="table" type="table table-hover" >
+
+        <table style={{ width: 900,}}className="table" type="table table-hover" >
             <thead>
-                <tr>
-                    <th scope = "col">Usuario</th>
-                    <th scope="col">Opniao</th>
+                <tr> 
+                    <th scope = "col">Usuário</th>
+                    <th scope="col">Comentário</th>
                     <th scope="col">Tipo</th>
                 </tr>
             </thead>

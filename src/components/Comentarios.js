@@ -3,6 +3,7 @@ import '../css/AppStyle.css';
 import { withRouter } from 'react-router-dom'
 import OpniaoTable from './opniaoTable'
 import OpniaoService from '../service/opniaoService'
+//import Cards from './Cards'
 
 class Comentarios extends React.Component {
 

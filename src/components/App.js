@@ -1,9 +1,26 @@
-import React from 'react';
-import '../css/AppStyle.css';
-import { withRouter } from 'react-router-dom'
+import React, { Component } from 'react'
 
-//teste
+import Navbar from "./Navbar";
+
+import { withRouter } from 'react-router-dom';
+
+import '../css/App.css';
+
+import GlobalStyle from './Global';
+
+import Card from 'react-bootstrap/Card';
+
+import Slider from './Slider';
+
+
+
+
 class App extends React.Component {
+
+
+  comentario1 = () => {
+    this.props.history.push('/TelaComentarios')
+  }
 
   prepareComentario = () =>{
     this.props.history.push('/comentario')
@@ -12,86 +29,79 @@ class App extends React.Component {
   saindo = () =>{
     this.props.history.push('/login')
   }
-  
+
+  state = {
+    navbarOpen: false
+  }
+
+  handleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen });
+    
+  }
+
   render() {
+
     return (
-      <div>
-        <head>
-          <meta charSet="UTF-8"></meta>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-          <title>Fala UFS</title>
-        </head>
-        <body>
-          <header>
-            <div className="header">
+      <>
+        <Navbar
+          navbarState={this.state.navbarOpen}
+          handleNavbar={this.handleNavbar}
+        />
+        
 
-              <span className="logo_img"></span>
-              <span className="logo_text">Fala UFS</span>
-              <span className="exit_button" type="button"></span>
-              <nav>
-                <ul className="nav">
-                  <li><button className="nav_btn" type="button">Audiências</button></li>
-                  <li><button className="nav_btn" type="button">Calendário</button></li>
-                  <li><button className="nav_btn" type="button">Ajuda</button></li>
-                  <li><button className="nav_btn" type="button">Perfil</button></li>
-                  <li><button onClick={this.saindo}className="nav_btn" type="button">Sair</button></li>
+        <div>
+          <span className="smartufs"></span>
+        </div>
 
-                </ul>
-              </nav>
-            </div>
-          </header>
-          <div>
-            <span className="smartufs"></span>
-          </div>
-          <div>
-            <span className="dau"></span>
-          </div>
-          <div>
-            <span className="dcomp"></span>
-          </div>
-          <div>
-            <span className="slider_function"></span>
-          </div>
-          <div>
-            <sapn className="likert_reactions"></sapn>
-          </div>
+        <div>
+          <span className="dau"></span>
+        </div>
 
+        <div>
+          <span className="dcomp"></span>
+        </div>
 
-          <div className="theme_text">
-            <h1><b>EIXO TEMÁTICO:</b> SEGURANÇA</h1>
-          </div>
+        <div>
+          <sapn style={{top: 430, left: 420}} className="likert_reactions"></sapn>
+        </div>
 
-          <div className="purpose">
-            <span className="dep_ref"></span>
-            <div className="userref_text">
-              <h5><b>PROPOSTO POR:</b></h5>
-              <p>Departamento de Computação</p>
-            </div>
-          </div>
+        <div>
+          <span style={{left: 1160, top: '20rem'}} className="dep_ref"></span>
+        </div>
 
+        <Card style={{ top : '20rem', height: '16rem'}} className="theme_by">
+          <Card.Header><h4><b>PROPOSTO POR:</b></h4></Card.Header>
+          <Card.Body>
+            <Card.Title><h5>Departamento de Computação</h5></Card.Title>
+          </Card.Body>
+          <Card.Footer className="text-muted">2 dias atrás</Card.Footer>
+        </Card>
 
-
-
-          <div className="enquete">
-            <h3><b>ENQUETE:</b> Você acha a UFS segura?</h3>
-          </div>
-
-          <div className="descricao">
-            <p><b>Descrição da enquete:</b> Lorem ipsum dolor magnificencis il est magna et corde et lux et lorem impsum.
+        <Card style={{ top: -150,}} className="text-center">
+          <Card.Header><h1><b>EIXO TEMÁTICO:</b> SEGURANÇA</h1></Card.Header>
+          <Card.Body>
+            <Card.Title><h1><b>ENQUETE:</b> Você acha a UFS segura?</h1></Card.Title>
+            <Card.Text>
+              <p><b>Descrição da enquete:</b> Lorem ipsum dolor magnificencis il est magna et corde et lux et lorem impsum.
         </p>
-          </div>
+            </Card.Text>
+          </Card.Body>
+        </Card>
 
-          <span className="alert_how_to"></span>
+        <span style={{top: '31rem', left: '35rem'}} className="alert_how_to"></span>
 
-          <div className="como_votar">
-            <p><b>Como votar:</b> Lorem ipsum dolor magnificencis il est magna et corde et lux et lorem impsum.</p>
-          </div>
+        <div style={{top: '28.3rem', left: '38rem', height: 10}} className="como_votar">
+          <p><b>Como votar:</b> Lorem ipsum dolor magnificencis il est magna et corde et lux et lorem impsum.</p>
+        </div>
 
-          <button onClick={this.prepareComentario}className="escrever_comentario" type="button">Escrever um comentário</button>
-          
-        </body>
-      </div>
-    );
+        <button style={{top: 520, marginBottom: 65}} onClick={this.prepareComentario}className="escrever_comentario" type="button">ESCREVER UM COMENTÁRIO</button>
+        <button style={{top: 520, marginBottom: 65}} onclick={this.comentario1}className="sem_comentario" type="button">FINALIZAR VOTO SEM COMENTÁRIO</button>
+
+        <GlobalStyle />
+        
+        <Slider />
+      </>
+    )
   }
 }
 

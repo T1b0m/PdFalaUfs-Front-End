@@ -43,20 +43,20 @@ class Login extends React.Component {
           <header>
             <div className="header">
               <div>
-                <span className="logo_img"></span>
+                <span style={{top: 100, left: 640,}}className="logo_img"></span>
                 <span className="login_text">FAZER LOGIN COM SIGAA</span>
               </div>
 
             </div>
           </header>
           <div>
-            <span className="smartufs"></span>
+            <span style={{top: 50}}className="smartufs"></span>
           </div>
           <div>
-            <span className="dau"></span>
+            <span style={{top: 115}} className="dau"></span>
           </div>
           <div>
-            <span className="dcomp"></span>
+            <span style={{top: 200}} className="dcomp"></span>
           </div>
 
           <div className="form-group">
