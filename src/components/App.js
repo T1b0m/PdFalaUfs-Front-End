@@ -1,4 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react';
+import '../css/AppStyle.css';
+import { withRouter } from 'react-router-dom';
+
+import React, { Component } from 'react';
 
 import Navbar from "./Navbar";
 
@@ -12,8 +16,7 @@ import Card from 'react-bootstrap/Card';
 
 import Slider from './Slider';
 
-
-
+//teste
 
 class App extends React.Component {
 
